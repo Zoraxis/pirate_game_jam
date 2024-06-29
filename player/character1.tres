@@ -1,0 +1,82 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dx5040i3316et"]
+
+[ext_resource type="Texture2D" uid="uid://bjfih6tlb8v31" path="res://assets/GhostShip_Characters.png" id="1_3dse5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldewf"]
+atlas = ExtResource("1_3dse5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stsa2"]
+atlas = ExtResource("1_3dse5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkndu"]
+atlas = ExtResource("1_3dse5")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwy83"]
+atlas = ExtResource("1_3dse5")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wanxe"]
+atlas = ExtResource("1_3dse5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyy78"]
+atlas = ExtResource("1_3dse5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrra3"]
+atlas = ExtResource("1_3dse5")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m757r"]
+atlas = ExtResource("1_3dse5")
+region = Rect2(80, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldewf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stsa2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkndu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwy83")
+}],
+"loop": true,
+"name": &"melee",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wanxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyy78")
+}],
+"loop": true,
+"name": &"run",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrra3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m757r")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]

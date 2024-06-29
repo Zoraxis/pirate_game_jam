@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgmforjd5kk8n"]
+
+[ext_resource type="Script" path="res://player/CharacterBody2D.gd" id="1_mev22"]
+[ext_resource type="SpriteFrames" uid="uid://dx5040i3316et" path="res://player/character1.tres" id="2_yiows"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifips"]
+size = Vector2(1, 0.5)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_mev22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_ifips")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5.04871e-29, -4.23516e-22)
+scale = Vector2(0.0468752, 0.0546874)
+sprite_frames = ExtResource("2_yiows")
+animation = &"idle"
