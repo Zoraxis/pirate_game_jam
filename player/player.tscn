@@ -1,23 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgmforjd5kk8n"]
+[gd_scene load_steps=6 format=3 uid="uid://cgmforjd5kk8n"]
 
 [ext_resource type="Script" path="res://player/CharacterBody2D.gd" id="1_mev22"]
 [ext_resource type="SpriteFrames" uid="uid://dx5040i3316et" path="res://player/character1.tres" id="2_yiows"]
+[ext_resource type="Gradient" uid="uid://yfu4til0513s" path="res://shared/textures/gradients/explosion.tres" id="3_8a25j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifips"]
 size = Vector2(1, 0.5)
 
-[node name="player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2e3u"]
+size = Vector2(0.5, 0.5)
+
+[node name="player" type="CharacterBody2D" groups=["PLAYER"]]
+scale = Vector2(100, 100)
+collision_layer = 1073741824
+collision_mask = 1073741825
 script = ExtResource("1_mev22")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_ifips")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="asprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(5.04871e-29, -4.23516e-22)
 scale = Vector2(0.0468752, 0.0546874)
 sprite_frames = ExtResource("2_yiows")
-animation = &"idle"
+animation = &"shoot"
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[node name="pistolParticle" type="CPUParticles2D" parent="."]
+top_level = true
+position = Vector2(30, 3)
+emitting = false
+amount = 30
+lifetime = 2.0
+one_shot = true
+speed_scale = 15.0
+explosiveness = 1.0
+randomness = 0.32
+lifetime_randomness = 0.78
+fract_delta = false
+direction = Vector2(0, 0)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 49.49
+scale_amount_min = 5.0
+scale_amount_max = 12.5
+color_initial_ramp = ExtResource("3_8a25j")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collider" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-3.8147e-08, 0)
+shape = SubResource("RectangleShape2D_h2e3u")
+
+[connection signal="animation_finished" from="asprite" to="." method="_on_animation_end"]
+[connection signal="animation_looped" from="asprite" to="." method="_on_animation_end"]
+[connection signal="frame_changed" from="asprite" to="." method="_on_frame_changed"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_collision"]

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dx5040i3316et"]
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://dx5040i3316et"]
 
 [ext_resource type="Texture2D" uid="uid://bjfih6tlb8v31" path="res://assets/GhostShip_Characters.png" id="1_3dse5"]
 
@@ -9,6 +9,10 @@ region = Rect2(0, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_stsa2"]
 atlas = ExtResource("1_3dse5")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g5g3"]
+atlas = ExtResource("1_3dse5")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkndu"]
 atlas = ExtResource("1_3dse5")
@@ -45,6 +49,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g5g3")
+}],
+"loop": true,
+"name": &"jump",
 "speed": 2.0
 }, {
 "frames": [{

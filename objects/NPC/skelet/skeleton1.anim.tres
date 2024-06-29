@@ -1,0 +1,63 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://corjwtckytv3e"]
+
+[ext_resource type="Texture2D" uid="uid://bivtmjwm1qduq" path="res://assets/GhostShip_Minions.png" id="1_4cmow"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg3q1"]
+atlas = ExtResource("1_4cmow")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctpln"]
+atlas = ExtResource("1_4cmow")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a14h"]
+atlas = ExtResource("1_4cmow")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atg2w"]
+atlas = ExtResource("1_4cmow")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmql7"]
+atlas = ExtResource("1_4cmow")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmtpa"]
+atlas = ExtResource("1_4cmow")
+region = Rect2(48, 32, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg3q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctpln")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a14h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atg2w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmql7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmtpa")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
