@@ -18,3 +18,6 @@ position = Vector2(5.04871e-29, -4.23516e-22)
 scale = Vector2(0.0468752, 0.0546874)
 sprite_frames = ExtResource("2_yiows")
 animation = &"idle"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
