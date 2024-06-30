@@ -1,18 +1,25 @@
-[gd_scene load_steps=140 format=3 uid="uid://qmmx7cybsqfw"]
+[gd_scene load_steps=146 format=3 uid="uid://ci2dvxvoww0yp"]
 
-[ext_resource type="PackedScene" uid="uid://cgmforjd5kk8n" path="res://player/player.tscn" id="1_mmuvr"]
-[ext_resource type="Texture2D" uid="uid://cl04nth13fkgj" path="res://assets/GhostShip_Decoration.png" id="2_46vjk"]
-[ext_resource type="Texture2D" uid="uid://brju2tt4awu3c" path="res://assets/Pixelart Grasslands/GrassTiles.png" id="3_jq8ns"]
-[ext_resource type="Texture2D" uid="uid://d34cglovl6n5j" path="res://assets/GhostShip_TileSet.png" id="3_ywfnl"]
-[ext_resource type="Texture2D" uid="uid://dvlxrywlgxxtt" path="res://assets/Tiles-and-Enemies.png" id="4_bkwgo"]
-[ext_resource type="Texture2D" uid="uid://bke1bjaiy18bf" path="res://assets/Pixelart Grasslands/Decor.png" id="4_eeqwc"]
-[ext_resource type="Texture2D" uid="uid://dwdwrtt7xq5cm" path="res://assets/fresh-water-tiles-music/8bit-water-smallwave.png" id="7_oqx5u"]
-[ext_resource type="Texture2D" uid="uid://db51dls1vf2ot" path="res://assets/fresh-water-tiles-music/8bit-water-currenty.png" id="8_3xcq6"]
-[ext_resource type="Texture2D" uid="uid://cmv32qdbgawbn" path="res://assets/fresh-water-tiles-music/8bit-water-flat.png" id="9_boqpq"]
-[ext_resource type="Texture2D" uid="uid://cphbikyx4041i" path="res://assets/fresh-water-tiles-music/8bit-water-ripply.png" id="10_pnldl"]
-[ext_resource type="Texture2D" uid="uid://2wqdxwxo7o85" path="res://assets/image.png" id="11_d0t33"]
-[ext_resource type="Texture2D" uid="uid://dmiuu1iu3xcok" path="res://assets/image (1).png" id="12_qg3bx"]
-[ext_resource type="Texture2D" uid="uid://qnt14ru42dwg" path="res://assets/image (2).png" id="13_f64yi"]
+[ext_resource type="PackedScene" uid="uid://cgmforjd5kk8n" path="res://player/player.tscn" id="1_i2er6"]
+[ext_resource type="Texture2D" uid="uid://cl04nth13fkgj" path="res://assets/GhostShip_Decoration.png" id="2_irqpl"]
+[ext_resource type="Texture2D" uid="uid://brju2tt4awu3c" path="res://assets/Pixelart Grasslands/GrassTiles.png" id="3_vxx16"]
+[ext_resource type="Texture2D" uid="uid://bke1bjaiy18bf" path="res://assets/Pixelart Grasslands/Decor.png" id="4_rb6m6"]
+[ext_resource type="Texture2D" uid="uid://d34cglovl6n5j" path="res://assets/GhostShip_TileSet.png" id="5_14csc"]
+[ext_resource type="Texture2D" uid="uid://dvlxrywlgxxtt" path="res://assets/Tiles-and-Enemies.png" id="6_qlbcr"]
+[ext_resource type="Texture2D" uid="uid://dwdwrtt7xq5cm" path="res://assets/fresh-water-tiles-music/8bit-water-smallwave.png" id="7_o8mkt"]
+[ext_resource type="Texture2D" uid="uid://db51dls1vf2ot" path="res://assets/fresh-water-tiles-music/8bit-water-currenty.png" id="8_0vh7y"]
+[ext_resource type="Texture2D" uid="uid://cmv32qdbgawbn" path="res://assets/fresh-water-tiles-music/8bit-water-flat.png" id="9_s6uom"]
+[ext_resource type="Texture2D" uid="uid://cphbikyx4041i" path="res://assets/fresh-water-tiles-music/8bit-water-ripply.png" id="10_gkwok"]
+[ext_resource type="Texture2D" uid="uid://2wqdxwxo7o85" path="res://assets/image.png" id="11_3237j"]
+[ext_resource type="Texture2D" uid="uid://dmiuu1iu3xcok" path="res://assets/image (1).png" id="12_bh8yh"]
+[ext_resource type="Texture2D" uid="uid://qnt14ru42dwg" path="res://assets/image (2).png" id="13_lyehi"]
+[ext_resource type="Texture2D" uid="uid://cyfhe84ohow7i" path="res://assets/ui/GUI (1).png" id="14_k8i3h"]
+[ext_resource type="Script" path="res://Sxripts/Button.gd" id="15_8bngu"]
+[ext_resource type="Texture2D" uid="uid://bojibugrkskab" path="res://assets/ui/GUI (2).png" id="16_tsem7"]
+[ext_resource type="Texture2D" uid="uid://cc24peidqunx1" path="res://assets/ui/Новый проект.png" id="17_h0r86"]
+[ext_resource type="Script" path="res://Sxripts/Button1.gd" id="18_gksnk"]
+[ext_resource type="FontFile" uid="uid://b7hwih841orpm" path="res://arcadeclassic/ARCADECLASSIC.TTF" id="19_bhs6d"]
+[ext_resource type="Script" path="res://Sxripts/Button3.gd" id="20_qtt85"]
 
 [sub_resource type="Gradient" id="Gradient_8m7m5"]
 offsets = PackedFloat32Array(0.0120482, 1)
@@ -20,9 +27,6 @@ colors = PackedColorArray(0.57282, 0.551115, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_d401q"]
 gradient = SubResource("Gradient_8m7m5")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uq4xo"]
-size = Vector2(8.86207, 0.77)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_qkcas"]
 tile_data = PackedInt32Array(0, 131073, 0)
@@ -355,7 +359,7 @@ tile_data = PackedInt32Array(0, 131076, 8)
 tile_data = PackedInt32Array(0, 4, 10)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_enw0a"]
-texture = ExtResource("2_46vjk")
+texture = ExtResource("2_irqpl")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 1:0/0 = 0
@@ -443,7 +447,7 @@ texture_region_size = Vector2i(8, 8)
 5:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jlmui"]
-texture = ExtResource("3_jq8ns")
+texture = ExtResource("3_vxx16")
 texture_region_size = Vector2i(8, 8)
 2:0/0 = 0
 4:0/0 = 0
@@ -553,7 +557,7 @@ texture_region_size = Vector2i(8, 8)
 8:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eeugx"]
-texture = ExtResource("4_eeqwc")
+texture = ExtResource("4_rb6m6")
 texture_region_size = Vector2i(8, 8)
 1:1/0 = 0
 2:1/0 = 0
@@ -630,7 +634,7 @@ texture_region_size = Vector2i(8, 8)
 12:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6rkaf"]
-texture = ExtResource("3_ywfnl")
+texture = ExtResource("5_14csc")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 1:0/0 = 0
@@ -680,7 +684,7 @@ texture_region_size = Vector2i(8, 8)
 8:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dm3i0"]
-texture = ExtResource("4_bkwgo")
+texture = ExtResource("6_qlbcr")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 1:0/0 = 0
@@ -1178,22 +1182,22 @@ texture_region_size = Vector2i(8, 8)
 25:18/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hia5"]
-texture = ExtResource("7_oqx5u")
+texture = ExtResource("7_o8mkt")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hangj"]
-texture = ExtResource("8_3xcq6")
+texture = ExtResource("8_0vh7y")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_drpmx"]
-texture = ExtResource("9_boqpq")
+texture = ExtResource("9_s6uom")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juvtt"]
-texture = ExtResource("10_pnldl")
+texture = ExtResource("10_gkwok")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 
@@ -1337,16 +1341,17 @@ position = Vector2(543, 285)
 scale = Vector2(19.6523, 9.95508)
 texture = SubResource("GradientTexture2D_d401q")
 
-[node name="player" parent="." instance=ExtResource("1_mmuvr")]
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="player" parent="." instance=ExtResource("1_i2er6")]
 visible = false
 position = Vector2(418, 19)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(481.103, 379.5)
 scale = Vector2(100, 100)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_uq4xo")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_xcjr4")
@@ -1389,13 +1394,13 @@ layer_2/tile_data = PackedInt32Array(24, 131073, 0, 65560, 131073, 0, 131096, 13
 [node name="Image" type="Sprite2D" parent="StaticBody2D2"]
 position = Vector2(383, 96)
 scale = Vector2(0.0403409, 0.0378151)
-texture = ExtResource("11_d0t33")
+texture = ExtResource("11_3237j")
 
 [node name="Image2" type="Sprite2D" parent="StaticBody2D2"]
 position = Vector2(374, 96)
 rotation = 1.5708
 scale = Vector2(0.0403409, 0.0378151)
-texture = ExtResource("11_d0t33")
+texture = ExtResource("11_3237j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(378.5, 96)
@@ -1406,7 +1411,7 @@ shape = SubResource("RectangleShape2D_fcbto")
 [node name="Image(1)" type="Sprite2D" parent="StaticBody2D3"]
 position = Vector2(424, 92)
 scale = Vector2(0.0537926, 0.0595238)
-texture = ExtResource("12_qg3bx")
+texture = ExtResource("12_bh8yh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(424, 92.25)
@@ -1417,8 +1422,94 @@ shape = SubResource("RectangleShape2D_cu3is")
 [node name="Image(2)" type="Sprite2D" parent="StaticBody2D4"]
 position = Vector2(459, 94)
 scale = Vector2(0.065909, 0.0822785)
-texture = ExtResource("13_f64yi")
+texture = ExtResource("13_lyehi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(459, 93)
 shape = SubResource("RectangleShape2D_3b1bn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 1090.0
+offset_top = 5.0
+offset_right = 1287.0
+offset_bottom = 313.0
+scale = Vector2(0.319997, 0.28)
+focus_mode = 0
+icon = ExtResource("14_k8i3h")
+flat = true
+script = ExtResource("15_8bngu")
+metadata/_edit_lock_ = true
+
+[node name="PauseMenu" type="Sprite2D" parent="CanvasLayer"]
+z_index = 20
+position = Vector2(575, 327.5)
+scale = Vector2(2.12349, 2.55667)
+texture = ExtResource("16_tsem7")
+
+[node name="Button" type="Button" parent="CanvasLayer/PauseMenu"]
+offset_left = -60.1219
+offset_top = -58.7928
+offset_right = 247.878
+offset_bottom = 99.2072
+scale = Vector2(0.385991, 0.207264)
+focus_mode = 0
+icon = ExtResource("17_h0r86")
+flat = true
+script = ExtResource("18_gksnk")
+
+[node name="Label" type="Label" parent="CanvasLayer/PauseMenu/Button"]
+layout_mode = 0
+offset_left = 42.2964
+offset_top = 46.8265
+offset_right = 266.296
+offset_bottom = 97.8265
+theme_override_fonts/font = ExtResource("19_bhs6d")
+theme_override_font_sizes/font_size = 50
+text = "CONTINUE"
+
+[node name="Button2" type="Button" parent="CanvasLayer/PauseMenu"]
+offset_left = -58.8427
+offset_top = -20.3427
+offset_right = 249.157
+offset_bottom = 137.657
+scale = Vector2(0.385991, 0.207264)
+focus_mode = 0
+icon = ExtResource("17_h0r86")
+flat = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/PauseMenu/Button2"]
+layout_mode = 0
+offset_left = 59.723
+offset_top = 44.3657
+offset_right = 255.723
+offset_bottom = 95.3657
+theme_override_fonts/font = ExtResource("19_bhs6d")
+theme_override_font_sizes/font_size = 50
+text = "OPTIONS"
+
+[node name="Button3" type="Button" parent="CanvasLayer/PauseMenu"]
+offset_left = -59.8072
+offset_top = 20.1434
+offset_right = 248.193
+offset_bottom = 178.143
+scale = Vector2(0.385991, 0.207264)
+focus_mode = 0
+icon = ExtResource("17_h0r86")
+flat = true
+script = ExtResource("20_qtt85")
+
+[node name="Label3" type="Label" parent="CanvasLayer/PauseMenu/Button3"]
+layout_mode = 0
+offset_left = 104.052
+offset_top = 45.1462
+offset_right = 216.052
+offset_bottom = 96.1462
+theme_override_fonts/font = ExtResource("19_bhs6d")
+theme_override_font_sizes/font_size = 50
+text = "exit"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/Button" to="CanvasLayer/PauseMenu/Button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/Button3" to="CanvasLayer/PauseMenu/Button3" method="_on_pressed"]

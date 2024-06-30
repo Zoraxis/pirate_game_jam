@@ -6,3 +6,5 @@ var player: CharacterBody2D = null
 
 func log(text):
 	console.log(text)
+
+var opened = false
