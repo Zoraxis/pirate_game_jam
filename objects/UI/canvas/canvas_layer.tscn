@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxxn1kgrhfv23"]
+[gd_scene load_steps=10 format=3 uid="uid://dxxn1kgrhfv23"]
 
 [ext_resource type="Texture2D" uid="uid://cyfhe84ohow7i" path="res://assets/ui/GUI (1).png" id="1_vl0r3"]
 [ext_resource type="Script" path="res://objects/UI/canvas/pause_button.gd" id="2_4sbsa"]
 [ext_resource type="Texture2D" uid="uid://bojibugrkskab" path="res://assets/ui/GUI (2).png" id="3_tacjm"]
+[ext_resource type="PackedScene" uid="uid://b3c848pnejrye" path="res://objects/UI/weapon/weapon_icon.tscn" id="4_feby0"]
 [ext_resource type="Texture2D" uid="uid://cc24peidqunx1" path="res://assets/ui/Новый проект.png" id="4_rxnhe"]
 [ext_resource type="Script" path="res://objects/UI/canvas/continue_button.gd" id="5_eru5b"]
 [ext_resource type="FontFile" uid="uid://b7hwih841orpm" path="res://arcadeclassic/ARCADECLASSIC.TTF" id="6_o01x2"]
 [ext_resource type="Script" path="res://objects/UI/canvas/exit_button.gd" id="7_ler6r"]
+[ext_resource type="PackedScene" uid="uid://clif2rc4yqklj" path="res://objects/UI/health/health.tscn" id="8_ytry4"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
@@ -22,6 +24,14 @@ icon = ExtResource("1_vl0r3")
 flat = true
 script = ExtResource("2_4sbsa")
 metadata/_edit_lock_ = true
+
+[node name="health" parent="." instance=ExtResource("8_ytry4")]
+position = Vector2(71, 66)
+scale = Vector2(6, 6)
+
+[node name="weapon_icon" parent="." instance=ExtResource("4_feby0")]
+position = Vector2(126, 198)
+scale = Vector2(3, 3)
 
 [node name="PauseMenu" type="Sprite2D" parent="."]
 visible = false
