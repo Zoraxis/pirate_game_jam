@@ -1,4 +1,4 @@
-[gd_scene load_steps=151 format=3 uid="uid://cwn7x4cnk24hd"]
+[gd_scene load_steps=155 format=3 uid="uid://cwn7x4cnk24hd"]
 
 [ext_resource type="PackedScene" uid="uid://b3pnswius32gp" path="res://objects/static/atoms/ladder/ladder.tscn" id="2_rvwjt"]
 [ext_resource type="PackedScene" uid="uid://buv6ydu0m6frc" path="res://objects/NPC/skelet/skelet.tscn" id="8_etawg"]
@@ -7,12 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://brju2tt4awu3c" path="res://assets/Pixelart Grasslands/GrassTiles.png" id="11_e6sft"]
 [ext_resource type="Texture2D" uid="uid://bke1bjaiy18bf" path="res://assets/Pixelart Grasslands/Decor.png" id="12_lmo0e"]
 [ext_resource type="Texture2D" uid="uid://by554kf2nowd3" path="res://assets/fresh-water-tiles-music/8bit-water-wavy.png" id="13_wpmc7"]
+[ext_resource type="PackedScene" uid="uid://cbsai2n5hqh27" path="res://objects/static/atoms/pickable/pickable.tscn" id="14_5ctio"]
 [ext_resource type="Texture2D" uid="uid://d34cglovl6n5j" path="res://assets/GhostShip_TileSet.png" id="14_7jr0c"]
 [ext_resource type="Texture2D" uid="uid://dvlxrywlgxxtt" path="res://assets/Tiles-and-Enemies.png" id="15_ipbsy"]
 [ext_resource type="Texture2D" uid="uid://dwdwrtt7xq5cm" path="res://assets/fresh-water-tiles-music/8bit-water-smallwave.png" id="16_kx1hu"]
 [ext_resource type="Texture2D" uid="uid://db51dls1vf2ot" path="res://assets/fresh-water-tiles-music/8bit-water-currenty.png" id="17_kwx60"]
+[ext_resource type="Script" path="res://world2/booze.gd" id="18_r0ldp"]
 [ext_resource type="Texture2D" uid="uid://cmv32qdbgawbn" path="res://assets/fresh-water-tiles-music/8bit-water-flat.png" id="18_r7m48"]
 [ext_resource type="Texture2D" uid="uid://cphbikyx4041i" path="res://assets/fresh-water-tiles-music/8bit-water-ripply.png" id="19_h1ws4"]
+[ext_resource type="Texture2D" uid="uid://bfpffwqlowobb" path="res://assets/raw/booze_raw.png" id="19_jirwv"]
 [ext_resource type="PackedScene" uid="uid://cgmforjd5kk8n" path="res://player/player.tscn" id="20_j82ww"]
 [ext_resource type="Script" path="res://world/scripts/camera.gd" id="21_bat1t"]
 [ext_resource type="PackedScene" uid="uid://dxxn1kgrhfv23" path="res://objects/UI/canvas/canvas_layer.tscn" id="22_inwke"]
@@ -1382,6 +1385,9 @@ size = Vector2(4, 46)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xemq"]
 size = Vector2(40, 3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnfxe"]
+size = Vector2(6, 6)
+
 [node name="world2" type="Node2D"]
 position = Vector2(0, 36)
 
@@ -1405,13 +1411,16 @@ layer_4/tile_data = PackedInt32Array(590028, 393227, 6, 655564, 458763, 7, 72110
 position = Vector2(246, 47)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-39.0909, -1.75758)
+position = Vector2(0, -0.0606062)
 zoom = Vector2(6, 6)
 script = ExtResource("21_bat1t")
 noise = SubResource("FastNoiseLite_1ct0w")
 
+[node name="pickable" parent="player" instance=ExtResource("14_5ctio")]
+position = Vector2(0.242424, -0.606061)
+pickup_value = 2
+
 [node name="Canvas" parent="." instance=ExtResource("22_inwke")]
-visible = false
 
 [node name="main_ship" type="StaticBody2D" parent="."]
 
@@ -1486,3 +1495,30 @@ health = 2
 [node name="enemy3" parent="enemy_ship" instance=ExtResource("8_etawg")]
 position = Vector2(-80, 112)
 texture = 3
+
+[node name="Node2D" type="Area2D" parent="enemy_ship"]
+collision_layer = 0
+collision_mask = 1073741824
+script = ExtResource("18_r0ldp")
+
+[node name="Sprite2D" type="Sprite2D" parent="enemy_ship/Node2D"]
+position = Vector2(-52, 100)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("19_jirwv")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="enemy_ship/Node2D"]
+position = Vector2(-52, 100)
+amount = 60
+lifetime = 0.1
+speed_scale = 0.2
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 143.4
+color = Color(0.964706, 0.403922, 0, 0.133333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_ship/Node2D"]
+position = Vector2(-52, 100)
+shape = SubResource("RectangleShape2D_cnfxe")
+
+[connection signal="body_entered" from="enemy_ship/Node2D" to="enemy_ship/Node2D" method="_on_body_entered"]

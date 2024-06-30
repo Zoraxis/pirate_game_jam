@@ -1,7 +1,7 @@
 extends Area2D
 
-const SPEED = 25
 var activated = false
+@export var SPEED = 25
 @export var distance = 100
 
 func _physics_process(delta):

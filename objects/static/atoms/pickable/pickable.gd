@@ -4,7 +4,6 @@ extends Area2D
 @export var pickup_value = 1
 
 func _ready():
-	print_debug("sprite_in")
 	$sprite.texture = sprite_in
 
 func _on_body_entered(body):
