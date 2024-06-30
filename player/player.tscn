@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cgmforjd5kk8n"]
 
-[ext_resource type="Script" path="res://player/CharacterBody2D.gd" id="1_mev22"]
+[ext_resource type="Script" path="res://Scenes/player/CharacterBody2D.gd" id="1_mev22"]
 [ext_resource type="SpriteFrames" uid="uid://dx5040i3316et" path="res://player/character1.tres" id="2_yiows"]
 [ext_resource type="Gradient" uid="uid://yfu4til0513s" path="res://shared/textures/gradients/explosion.tres" id="3_8a25j"]
 
