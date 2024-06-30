@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var SPEED = 2500.0
+@export var SPEED = 500.0
 var coef = 1.05
 var knockback = 70
 var rotated = 1
