@@ -1,11 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://ci2dvxvoww0yp"]
+[gd_scene load_steps=14 format=3 uid="uid://ci2dvxvoww0yp"]
 
 [ext_resource type="PackedScene" uid="uid://cgmforjd5kk8n" path="res://player/player.tscn" id="1_mmuvr"]
 [ext_resource type="Script" path="res://world/camera.gd" id="2_46e0k"]
 [ext_resource type="Texture2D" uid="uid://ddt51arjpqiii" path="res://shared/textures/plain/orange.tres" id="2_r45jp"]
 [ext_resource type="Script" path="res://world/console.gd" id="3_2nxyb"]
+[ext_resource type="PackedScene" uid="uid://clif2rc4yqklj" path="res://objects/UI/health/health.tscn" id="3_dxf7x"]
+[ext_resource type="PackedScene" uid="uid://b3c848pnejrye" path="res://objects/UI/weapon/weapon_icon.tscn" id="4_emx8n"]
 [ext_resource type="PackedScene" uid="uid://buv6ydu0m6frc" path="res://objects/NPC/skelet/skelet.tscn" id="4_inf35"]
 [ext_resource type="PackedScene" uid="uid://dhp3tiscyd702" path="res://objects/static/atoms/bullet/bullet.tscn" id="5_8revs"]
+[ext_resource type="PackedScene" uid="uid://c7flxqrcio2wo" path="res://objects/static/atoms/bottle/bottle.tscn" id="7_ns78e"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4pwny"]
 
@@ -32,6 +35,12 @@ limit_smoothed = true
 script = ExtResource("2_46e0k")
 noise = SubResource("FastNoiseLite_4pwny")
 
+[node name="health" parent="player/camera" instance=ExtResource("3_dxf7x")]
+position = Vector2(-5.17, -2.69)
+
+[node name="weapon_icon" parent="player/camera" instance=ExtResource("4_emx8n")]
+position = Vector2(5.14, -2.60002)
+
 [node name="console" type="Label" parent="player"]
 offset_left = -5.39
 offset_top = -3.07
@@ -49,8 +58,11 @@ texture = SubResource("GradientTexture2D_d401q")
 
 [node name="enemy2" parent="." instance=ExtResource("4_inf35")]
 z_index = 1
-position = Vector2(451, 164)
+position = Vector2(687, 204)
 texture = 3
+
+[node name="bottle" parent="." instance=ExtResource("7_ns78e")]
+position = Vector2(882, 306)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(481.103, 379.5)
@@ -61,7 +73,7 @@ position = Vector2(5.41397, 0)
 shape = SubResource("RectangleShape2D_uq4xo")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(6.12897, 0.105)
+position = Vector2(6.18897, -0.035)
 scale = Vector2(0.328437, 0.0109375)
 texture = ExtResource("2_r45jp")
 

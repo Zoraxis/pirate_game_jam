@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
 var bullet = preload("res://objects/static/atoms/bullet/bullet.tscn")
+var melee_hit = preload("res://objects/static/atoms/melee/melee_hit.tscn")
 
+var max_health = 3
 @export var health = 3
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-const WEAPONS_COUNT = 2
+const WEAPONS_COUNT = 3
 
 var active_weapon = 0
 var animation_playing = false;
@@ -16,16 +18,22 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var knockback = 0
 
 const color_timer_max = 15
+var color_change_positive = false
 var color_timer: float = 0
 var color_back_timer: float = 0
+
+func _ready():
+	Global.player = self
 
 func _process(_delta):
 	process_hit()
 	direction_rotation = (-1 if $asprite.flip_h else 1)
 	if Input.is_action_just_pressed("action_shoot"):
-		if active_weapon == 0:
-			changeAnimation("melee", true)
+		#if active_weapon == 0:
+			#changeAnimation("melee", true)
 		if active_weapon == 1:
+			changeAnimation("melee", true)
+		if active_weapon == 2:
 			changeAnimation("shoot", true)
 		
 	if Input.is_action_just_pressed("action_change"):
@@ -53,16 +61,18 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_collision(body):
-	if body.is_in_group("FRAGILE"):
-		body.die(500)
-	if body.is_in_group("DAMAGE"):
-		health -= body.damage
-		if health <= 0:
-			queue_free()
-		else: 
-			color_timer = color_timer_max
-	if body.is_in_group("KNOCKBACK"):
-		knockback -= body.knockback
+	if not body.is_in_group("FRIENDLY") and health - body.damage <= max_health:
+		if body.is_in_group("FRAGILE"):
+			body.die(0)
+		if body.is_in_group("DAMAGE"):
+			health -= body.damage
+			if health <= 0:
+				queue_free()
+			else: 
+				color_change_positive = body.damage < 0
+				color_timer = color_timer_max
+		if body.is_in_group("KNOCKBACK"):
+			knockback -= body.knockback
 
 func changeAnimation(animation, isSolo):
 	if not animation_playing or isSolo:
@@ -77,7 +87,7 @@ func process_hit():
 		color_timer -= 1
 		
 		var color_left = (color_timer / color_timer_max)
-		modulate = Color(1, color_left, color_left)
+		modulate = Color(1, color_left, color_left) if not color_change_positive else Color(color_left, 1, color_left)
 		
 		if(color_timer == 0):
 			color_back_timer = color_timer_max
@@ -86,7 +96,7 @@ func process_hit():
 		color_back_timer -= 1
 		
 		var color_left = (1 - color_back_timer / color_timer_max)
-		modulate = Color(1, color_left, color_left)
+		modulate = Color(1, color_left, color_left) if not color_change_positive else Color(color_left, 1, color_left)
 
 func _on_animation_end():
 	if animation_playing:
@@ -97,6 +107,13 @@ func _on_frame_changed():
 		if active_weapon == 0:
 			pass
 		if active_weapon == 1:
+			knockback = 30
+			Global.camera.add_trauma(0.2)
+			var new_melee = melee_hit.instantiate();
+			new_melee.add_to_group("FRIENDLY")
+			new_melee.position = position + Vector2(33 * direction_rotation, 2)
+			get_tree().get_current_scene().add_child(new_melee)
+		if active_weapon == 2:
 			knockback = 300
 			Global.camera.add_trauma(1)
 			$pistolParticle.position = position + Vector2(30 * direction_rotation, 3)

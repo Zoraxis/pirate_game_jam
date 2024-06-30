@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cymrmh38ixloe"]
+
+[ext_resource type="Texture2D" uid="uid://x30kbqg708hc" path="res://assets/raw/weapon.icons.png" id="1_nmeo0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx65l"]
+atlas = ExtResource("1_nmeo0")
+region = Rect2(0, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mofia"]
+atlas = ExtResource("1_nmeo0")
+region = Rect2(69, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp2qt"]
+atlas = ExtResource("1_nmeo0")
+region = Rect2(138, 0, 62, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vx65l")
+}],
+"loop": true,
+"name": &"fist",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mofia")
+}],
+"loop": true,
+"name": &"pistol",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rp2qt")
+}],
+"loop": true,
+"name": &"sword",
+"speed": 5.0
+}]

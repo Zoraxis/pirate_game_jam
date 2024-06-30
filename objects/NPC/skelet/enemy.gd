@@ -20,6 +20,10 @@ var color_back_timer: float = 0
 var type = 0
 var lastCollision = null
 
+const shooting_delay_max = 300
+var shooting_delay = 0
+
+
 var state = 0
 # 0 - patrooling
 # 1 - awarness
@@ -34,12 +38,15 @@ func _ready():
 	$asprite.set_sprite_frames(animation)
 
 func _on_collision(body):
-	if lastCollision != body.name:
+	if lastCollision != body.name and !body.is_in_group("PLAYER_ONLY"):
 		lastCollision = body.name
 		state = 1
+		var bullet_side = 1 if (body.global_position.x < position.x) else -1
 		scale.x *= -1 if (body.global_position.x < position.x and direction_rotation != -1) or (body.global_position.x > position.x and direction_rotation != 1) else 1
+		if body.is_in_group("STUN"):
+			shooting_delay = shooting_delay_max / 3
 		if body.is_in_group("FRAGILE"):
-			body.die(500)
+			body.die(0)
 		if body.is_in_group("DAMAGE"):
 			health -= body.damage
 			if health <= 0:
@@ -47,12 +54,12 @@ func _on_collision(body):
 			else: 
 				color_timer = color_timer_max
 		if body.is_in_group("KNOCKBACK"):
-			knockback = body.knockback
+			knockback = body.knockback * bullet_side
 		
 func _process(_delta):
-	print(scale.x)
 	process_hit()
-	state_inspector()
+	if shooting_delay > 0:
+		shooting_delay -= 1
 	
 func state_inspector():
 	$Label.text = str(state)
@@ -71,19 +78,25 @@ func handle_state_1():
 	state = 1
 func handle_state_2():
 	state = 2
+	velocity.x += -(position - Global.player.position).normalized().x * SPEED
 func handle_state_3():
 	state = 3
-	changeAnimation("attack", true)
+	if shooting_delay <= 0:
+		shooting_delay = shooting_delay_max
+		changeAnimation("attack", true)
 
 func _physics_process(delta):
+	state_inspector()
 	direction_rotation = (-1 if scale.y != abs(scale.y) else 1)
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
 	if knockback > 0:
 		velocity = Vector2(1, 0) * knockback * scale.x * SPEED * delta
 		knockback *= 0.8
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
 		
 	changeAnimation("idle", false)
 	move_and_slide()
@@ -128,7 +141,7 @@ func _on_fov_entered(body):
 	if body.is_in_group("PLAYER"):
 		handle_state_2()
 		
-func _on_fov_exitedє(body):
+func _on_fov_exited(body):
 	if body.is_in_group("PLAYER"):
 		handle_state_1()
 

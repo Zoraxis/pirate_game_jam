@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 [autoload]
 
 Global="*res://world/global.gd"
+U="*res://world/U.gd"
 
 [input]
 

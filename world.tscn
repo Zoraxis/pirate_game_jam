@@ -1,4 +1,4 @@
-[gd_scene load_steps=140 format=3 uid="uid://ci2dvxvoww0yp"]
+[gd_scene load_steps=140 format=3 uid="uid://qmmx7cybsqfw"]
 
 [ext_resource type="PackedScene" uid="uid://cgmforjd5kk8n" path="res://player/player.tscn" id="1_mmuvr"]
 [ext_resource type="Texture2D" uid="uid://cl04nth13fkgj" path="res://assets/GhostShip_Decoration.png" id="2_46vjk"]
@@ -1340,7 +1340,6 @@ texture = SubResource("GradientTexture2D_d401q")
 [node name="player" parent="." instance=ExtResource("1_mmuvr")]
 visible = false
 position = Vector2(418, 19)
-scale = Vector2(100, 100)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(481.103, 379.5)
