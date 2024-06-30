@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://ci2dvxvoww0yp"]
+[gd_scene load_steps=140 format=3 uid="uid://ci2dvxvoww0yp"]
 
 [ext_resource type="PackedScene" uid="uid://cgmforjd5kk8n" path="res://player/player.tscn" id="1_mmuvr"]
 [ext_resource type="Texture2D" uid="uid://cl04nth13fkgj" path="res://assets/GhostShip_Decoration.png" id="2_vpb84"]
@@ -13,13 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://2wqdxwxo7o85" path="res://assets/image.png" id="11_xumqm"]
 [ext_resource type="Texture2D" uid="uid://dmiuu1iu3xcok" path="res://assets/image (1).png" id="12_r2qjm"]
 [ext_resource type="Texture2D" uid="uid://qnt14ru42dwg" path="res://assets/image (2).png" id="13_rlpyy"]
-[ext_resource type="Texture2D" uid="uid://cyfhe84ohow7i" path="res://assets/ui/GUI (1).png" id="14_h3uns"]
-[ext_resource type="Script" path="res://objects/UI/canvas/pause_button.gd" id="15_ailmp"]
-[ext_resource type="Texture2D" uid="uid://bojibugrkskab" path="res://assets/ui/GUI (2).png" id="16_i2xml"]
-[ext_resource type="Texture2D" uid="uid://cc24peidqunx1" path="res://assets/ui/Новый проект.png" id="17_6pqim"]
-[ext_resource type="Script" path="res://objects/UI/canvas/continue_button.gd" id="18_i61ki"]
-[ext_resource type="FontFile" uid="uid://b7hwih841orpm" path="res://arcadeclassic/ARCADECLASSIC.TTF" id="19_8qjig"]
-[ext_resource type="Script" path="res://objects/UI/canvas/Button3.gd" id="20_tspk5"]
+[ext_resource type="PackedScene" uid="uid://dxxn1kgrhfv23" path="res://objects/UI/canvas/canvas_layer.tscn" id="14_vvbgx"]
 
 [sub_resource type="Gradient" id="Gradient_8m7m5"]
 offsets = PackedFloat32Array(0.0120482, 1)
@@ -1428,88 +1422,4 @@ texture = ExtResource("13_rlpyy")
 position = Vector2(459, 93)
 shape = SubResource("RectangleShape2D_3b1bn")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 1090.0
-offset_top = 5.0
-offset_right = 1287.0
-offset_bottom = 313.0
-scale = Vector2(0.319997, 0.28)
-focus_mode = 0
-icon = ExtResource("14_h3uns")
-flat = true
-script = ExtResource("15_ailmp")
-metadata/_edit_lock_ = true
-
-[node name="PauseMenu" type="Sprite2D" parent="CanvasLayer"]
-z_index = 20
-position = Vector2(575, 327.5)
-scale = Vector2(2.12349, 2.55667)
-texture = ExtResource("16_i2xml")
-
-[node name="Button" type="Button" parent="CanvasLayer/PauseMenu"]
-offset_left = -60.1219
-offset_top = -58.7928
-offset_right = 247.878
-offset_bottom = 99.2072
-scale = Vector2(0.385991, 0.207264)
-focus_mode = 0
-icon = ExtResource("17_6pqim")
-flat = true
-script = ExtResource("18_i61ki")
-
-[node name="Label" type="Label" parent="CanvasLayer/PauseMenu/Button"]
-layout_mode = 0
-offset_left = 42.2964
-offset_top = 46.8265
-offset_right = 266.296
-offset_bottom = 97.8265
-theme_override_fonts/font = ExtResource("19_8qjig")
-theme_override_font_sizes/font_size = 50
-text = "CONTINUE"
-
-[node name="Button2" type="Button" parent="CanvasLayer/PauseMenu"]
-offset_left = -58.8427
-offset_top = -20.3427
-offset_right = 249.157
-offset_bottom = 137.657
-scale = Vector2(0.385991, 0.207264)
-focus_mode = 0
-icon = ExtResource("17_6pqim")
-flat = true
-
-[node name="Label2" type="Label" parent="CanvasLayer/PauseMenu/Button2"]
-layout_mode = 0
-offset_left = 59.723
-offset_top = 44.3657
-offset_right = 255.723
-offset_bottom = 95.3657
-theme_override_fonts/font = ExtResource("19_8qjig")
-theme_override_font_sizes/font_size = 50
-text = "OPTIONS"
-
-[node name="Button3" type="Button" parent="CanvasLayer/PauseMenu"]
-offset_left = -59.8072
-offset_top = 20.1434
-offset_right = 248.193
-offset_bottom = 178.143
-scale = Vector2(0.385991, 0.207264)
-focus_mode = 0
-icon = ExtResource("17_6pqim")
-flat = true
-script = ExtResource("20_tspk5")
-
-[node name="Label3" type="Label" parent="CanvasLayer/PauseMenu/Button3"]
-layout_mode = 0
-offset_left = 104.052
-offset_top = 45.1462
-offset_right = 216.052
-offset_bottom = 96.1462
-theme_override_fonts/font = ExtResource("19_8qjig")
-theme_override_font_sizes/font_size = 50
-text = "exit"
-
-[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/PauseMenu/Button" to="CanvasLayer/PauseMenu/Button" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/PauseMenu/Button3" to="CanvasLayer/PauseMenu/Button3" method="_on_pressed"]
+[node name="Canvas" parent="." instance=ExtResource("14_vvbgx")]
