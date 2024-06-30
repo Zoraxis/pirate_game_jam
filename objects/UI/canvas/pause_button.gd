@@ -5,11 +5,10 @@ extends Button
 		
 
 func menu():
-	Global.opened = !Global.opened
+	Global.togglePause()
 	var pauseMenu = get_parent().get_node("PauseMenu")
 	if pauseMenu != null:
 		pauseMenu.visible = Global.opened
-
 
 func _on_pressed():
 	menu()

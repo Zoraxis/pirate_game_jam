@@ -151,10 +151,10 @@ func _on_frame_changed():
 		if type == 0:
 			pass
 		if type == 1:
-			$pistolParticle.position = position + Vector2(30 * direction_rotation, 3)
+			$pistolParticle.position = position + Vector2(5.3 * direction_rotation, 36.5)
 			$pistolParticle.emitting = true
 			$pistolParticle.rotation_degrees = 0 if direction_rotation == 1 else 180
 			var new_bullet = bullet.instantiate();
-			new_bullet.position = position + Vector2(30 * direction_rotation, 2)
+			new_bullet.position = position #+ Vector2(30 * direction_rotation, 2)
 			new_bullet.rotated = direction_rotation
 			get_tree().get_current_scene().add_child(new_bullet)

@@ -13,18 +13,18 @@ position = Vector2(6.7, -2.95)
 texture = ExtResource("2_suhde")
 
 [node name="HP1" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1.8, 0)
+position = Vector2(-1.8, 0.05)
 sprite_frames = ExtResource("1_rjrxk")
 animation = &"some2"
 frame_progress = 0.213835
 
 [node name="HP2" type="AnimatedSprite2D" parent="."]
-position = Vector2(9.2, 0)
+position = Vector2(9.2, 0.05)
 sprite_frames = ExtResource("1_rjrxk")
 animation = &"some"
 
 [node name="HP3" type="AnimatedSprite2D" parent="."]
-position = Vector2(20.15, 0)
+position = Vector2(20.15, 0.05)
 sprite_frames = ExtResource("1_rjrxk")
 animation = &"some2"
 frame_progress = 0.213835
