@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cc24peidqunx1" path="res://assets/ui/Новый проект.png" id="4_rxnhe"]
 [ext_resource type="Script" path="res://objects/UI/canvas/continue_button.gd" id="5_eru5b"]
 [ext_resource type="FontFile" uid="uid://b7hwih841orpm" path="res://arcadeclassic/ARCADECLASSIC.TTF" id="6_o01x2"]
-[ext_resource type="Script" path="res://objects/UI/canvas/Button3.gd" id="7_ler6r"]
+[ext_resource type="Script" path="res://objects/UI/canvas/exit_button.gd" id="7_ler6r"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="Button" type="Button" parent="."]
+[node name="pause_buton" type="Button" parent="."]
 offset_left = 1090.0
 offset_top = 5.0
 offset_right = 1287.0
@@ -23,12 +23,13 @@ script = ExtResource("2_4sbsa")
 metadata/_edit_lock_ = true
 
 [node name="PauseMenu" type="Sprite2D" parent="."]
+visible = false
 z_index = 20
 position = Vector2(575, 327.5)
 scale = Vector2(2.12349, 2.55667)
 texture = ExtResource("3_tacjm")
 
-[node name="Button" type="Button" parent="PauseMenu"]
+[node name="continue_button" type="Button" parent="PauseMenu"]
 offset_left = -60.1219
 offset_top = -58.7928
 offset_right = 247.878
@@ -39,7 +40,7 @@ icon = ExtResource("4_rxnhe")
 flat = true
 script = ExtResource("5_eru5b")
 
-[node name="Label" type="Label" parent="PauseMenu/Button"]
+[node name="Label" type="Label" parent="PauseMenu/continue_button"]
 layout_mode = 0
 offset_left = 42.2964
 offset_top = 46.8265
@@ -49,7 +50,7 @@ theme_override_fonts/font = ExtResource("6_o01x2")
 theme_override_font_sizes/font_size = 50
 text = "CONTINUE"
 
-[node name="Button2" type="Button" parent="PauseMenu"]
+[node name="options_button" type="Button" parent="PauseMenu"]
 offset_left = -58.8427
 offset_top = -20.3427
 offset_right = 249.157
@@ -59,7 +60,7 @@ focus_mode = 0
 icon = ExtResource("4_rxnhe")
 flat = true
 
-[node name="Label2" type="Label" parent="PauseMenu/Button2"]
+[node name="Label2" type="Label" parent="PauseMenu/options_button"]
 layout_mode = 0
 offset_left = 59.723
 offset_top = 44.3657
@@ -69,7 +70,7 @@ theme_override_fonts/font = ExtResource("6_o01x2")
 theme_override_font_sizes/font_size = 50
 text = "OPTIONS"
 
-[node name="Button3" type="Button" parent="PauseMenu"]
+[node name="exit_button" type="Button" parent="PauseMenu"]
 offset_left = -59.8072
 offset_top = 20.1434
 offset_right = 248.193
@@ -80,7 +81,7 @@ icon = ExtResource("4_rxnhe")
 flat = true
 script = ExtResource("7_ler6r")
 
-[node name="Label3" type="Label" parent="PauseMenu/Button3"]
+[node name="Label3" type="Label" parent="PauseMenu/exit_button"]
 layout_mode = 0
 offset_left = 104.052
 offset_top = 45.1462
@@ -90,6 +91,6 @@ theme_override_fonts/font = ExtResource("6_o01x2")
 theme_override_font_sizes/font_size = 50
 text = "exit"
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
-[connection signal="pressed" from="PauseMenu/Button" to="PauseMenu/Button" method="_on_pressed"]
-[connection signal="pressed" from="PauseMenu/Button3" to="PauseMenu/Button3" method="_on_pressed"]
+[connection signal="pressed" from="pause_buton" to="pause_buton" method="_on_pressed"]
+[connection signal="pressed" from="PauseMenu/continue_button" to="PauseMenu/continue_button" method="_on_pressed"]
+[connection signal="pressed" from="PauseMenu/exit_button" to="PauseMenu/exit_button" method="_on_pressed"]
