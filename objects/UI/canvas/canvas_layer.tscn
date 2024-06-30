@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://objects/UI/canvas/exit_button.gd" id="7_ler6r"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
 
 [node name="pause_buton" type="Button" parent="."]
 offset_left = 1090.0

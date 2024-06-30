@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhat36nkbjq8x"]
 
-[ext_resource type="Script" path="res://objects/UI/menu/Menu.gd" id="1_kn0lg"]
+[ext_resource type="Script" path="res://objects/UI/menu/menu.gd" id="1_kn0lg"]
 [ext_resource type="Texture2D" uid="uid://cc24peidqunx1" path="res://assets/ui/Новый проект.png" id="1_ngr51"]
 [ext_resource type="Texture2D" uid="uid://bb74vnvbwov8p" path="res://assets/getimg_ai-2024-06-30T14_03_38.725Z.png" id="2_cc8v1"]
 [ext_resource type="FontFile" uid="uid://b7hwih841orpm" path="res://arcadeclassic/ARCADECLASSIC.TTF" id="2_thfhe"]
