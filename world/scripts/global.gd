@@ -9,7 +9,7 @@ var music_control =  false
 
 func togglePause():
 	opened = !opened
-	get_tree().paused = Global.opened
+	get_tree().paused = opened
 
 func log(text):
 	if console != null:

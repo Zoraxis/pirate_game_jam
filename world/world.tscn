@@ -1507,7 +1507,6 @@ scale = Vector2(0.8, 0.8)
 
 [node name="enemy" parent="Enviroment/boats_part" instance=ExtResource("8_aq5l3")]
 position = Vector2(1109, 34)
-movement_mod = 0
 
 [node name="island2" type="Node2D" parent="Enviroment"]
 position = Vector2(1380, 0)
