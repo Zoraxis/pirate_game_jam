@@ -3,10 +3,10 @@ extends CharacterBody2D
 var bullet = preload("res://objects/static/atoms/bullet/bullet.tscn")
 
 @export var SPEED = 20.0
+@export var movement_mod = 1
 
 @export var level = 0
 @export var texture = 1
-
 @export var health = 3
 
 var knockback = 0
@@ -54,7 +54,7 @@ func _on_collision(body):
 			else: 
 				color_timer = color_timer_max
 		if body.is_in_group("KNOCKBACK"):
-			knockback = body.knockback * bullet_side
+			knockback = body.knockback * bullet_side * movement_mod
 		
 func _process(_delta):
 	process_hit()
@@ -93,10 +93,10 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		
 	if knockback > 0:
-		velocity = Vector2(1, 0) * knockback * scale.x * SPEED * delta
+		velocity = Vector2(1, 0) * knockback * scale.x * SPEED * movement_mod * delta
 		knockback *= 0.8
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED) * movement_mod
 	
 		
 	changeAnimation("idle", false)
