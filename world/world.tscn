@@ -1,7 +1,7 @@
 [gd_scene load_steps=156 format=3 uid="uid://ci2dvxvoww0yp"]
 
 [ext_resource type="PackedScene" uid="uid://c7flxqrcio2wo" path="res://objects/static/atoms/bottle/bottle.tscn" id="1_l1nhp"]
-[ext_resource type="PackedScene" uid="uid://cgmforjd5kk8n" path="res://player/player.tscn" id="1_mmuvr"]
+[ext_resource type="PackedScene" uid="uid://cgmforjd5kk8n" path="res://Scenes/player/player.tscn" id="1_mmuvr"]
 [ext_resource type="Texture2D" uid="uid://cl04nth13fkgj" path="res://assets/GhostShip_Decoration.png" id="2_vpb84"]
 [ext_resource type="Texture2D" uid="uid://brju2tt4awu3c" path="res://assets/Pixelart Grasslands/GrassTiles.png" id="3_5nmjx"]
 [ext_resource type="PackedScene" uid="uid://cbsai2n5hqh27" path="res://objects/static/atoms/pickable/pickable.tscn" id="3_jtdck"]
