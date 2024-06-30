@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://br22vchek6daj" path="res://assets/ui/dread-pirate-roberts-sea-shanty-dance-edm-soundtrack-153022.mp3" id="7_wq5mp"]
 
 [node name="Menu" type="Control"]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 100
 layout_mode = 0
 offset_left = 478.0
 offset_top = 312.0
@@ -25,9 +27,11 @@ offset_bottom = 632.0
 scale = Vector2(0.72, 0.640001)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+z_index = 100
 layout_mode = 2
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 100
 layout_mode = 2
 focus_mode = 0
 text = "
@@ -36,6 +40,7 @@ icon = ExtResource("1_ngr51")
 flat = true
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Play"]
+z_index = 100
 layout_mode = 0
 offset_left = 48.6111
 offset_top = 21.875
@@ -46,6 +51,7 @@ theme_override_font_sizes/font_size = 100
 text = "Play"
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 100
 layout_mode = 2
 focus_mode = 0
 text = "
@@ -56,6 +62,7 @@ flat = true
 script = ExtResource("1_kn0lg")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Exit"]
+z_index = 100
 layout_mode = 0
 offset_left = 52.7778
 offset_top = 27.0623
@@ -66,17 +73,19 @@ theme_override_font_sizes/font_size = 100
 text = "EXIT"
 
 [node name="PirateShield" type="Sprite2D" parent="."]
+z_index = 101
 position = Vector2(590, 155)
 scale = Vector2(6.06944, 4.81522)
 texture = ExtResource("5_q64hp")
 
 [node name="GetimgAi-2024-06-30t140338_725z" type="Sprite2D" parent="."]
-z_index = -1
+z_index = 100
 position = Vector2(576.25, 326.5)
 scale = Vector2(0.810042, 0.618371)
 texture = ExtResource("2_cc8v1")
 
 [node name="Note" type="Button" parent="."]
+z_index = 100
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.066
@@ -93,6 +102,9 @@ flat = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_wq5mp")
 autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 326)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="MarginContainer/VBoxContainer/Exit" method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="MarginContainer/VBoxContainer/Exit" method="_on_pressed"]
