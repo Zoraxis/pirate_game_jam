@@ -15,4 +15,4 @@ func _on_pressed():
 	var pauseMenu = get_parent()
 	if pauseMenu != null:
 		pauseMenu.visible = false
-		Global.opened = !Global.opened
+		Global.togglePause()

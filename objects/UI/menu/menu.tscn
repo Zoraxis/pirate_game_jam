@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhat36nkbjq8x"]
+[gd_scene load_steps=9 format=3 uid="uid://bhat36nkbjq8x"]
 
 [ext_resource type="Script" path="res://objects/UI/menu/Menu.gd" id="1_kn0lg"]
 [ext_resource type="Texture2D" uid="uid://cc24peidqunx1" path="res://assets/ui/Новый проект.png" id="1_ngr51"]
@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cjo7yihnp3cgm" path="res://assets/raw/pirate_shield.png" id="5_q64hp"]
 [ext_resource type="Texture2D" uid="uid://biyykmicrasps" path="res://assets/note_on.png" id="6_buxif"]
 [ext_resource type="AudioStream" uid="uid://br22vchek6daj" path="res://assets/ui/dread-pirate-roberts-sea-shanty-dance-edm-soundtrack-153022.mp3" id="7_wq5mp"]
+[ext_resource type="Script" path="res://objects/UI/menu/audio.gd" id="8_ocr76"]
 
 [node name="Menu" type="Control"]
+process_mode = 3
 z_index = 100
 layout_mode = 3
 anchors_preset = 15
@@ -102,6 +104,7 @@ flat = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_wq5mp")
 autoplay = true
+script = ExtResource("8_ocr76")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 326)

@@ -7,6 +7,10 @@ var player: CharacterBody2D = null
 var opened = false
 var music_control =  false
 
+func togglePause():
+	opened = !opened
+	get_tree().paused = Global.opened
+
 func log(text):
 	if console != null:
 		console.log(text)

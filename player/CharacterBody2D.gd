@@ -11,6 +11,7 @@ const JUMP_VELOCITY = -100.0
 const WEAPONS_COUNT = 3
 
 var active_weapon = 0
+var unlocked_weapons = 1
 var animation_playing = false;
 var direction_rotation = 1;
 
@@ -41,7 +42,10 @@ func _process(_delta):
 			changeAnimation("shoot", true)
 		
 	if Input.is_action_just_pressed("action_change"):
-		active_weapon = (active_weapon + 1) % WEAPONS_COUNT
+		handle_change_weapon()
+
+func handle_change_weapon():
+		active_weapon = (active_weapon + 1) % unlocked_weapons
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -78,7 +82,7 @@ func _on_collision(body):
 		if body.is_in_group("DAMAGE"):
 			health -= body.damage
 			if health <= 0:
-				queue_free()
+				hide()
 			else: 
 				color_change_positive = body.damage < 0
 				color_timer = color_timer_max
@@ -118,11 +122,11 @@ func _on_frame_changed():
 		if active_weapon == 0:
 			pass
 		if active_weapon == 1:
-			knockback = 30
+			#knockback = 30
 			Global.camera.add_trauma(0.05)
 			var new_melee = melee_hit.instantiate();
 			new_melee.add_to_group("FRIENDLY")
-			new_melee.position = position + Vector2(33 * direction_rotation, 2)
+			new_melee.position = position + Vector2(7 * direction_rotation, 2)
 			get_tree().get_current_scene().add_child(new_melee)
 		if active_weapon == 2:
 			#knockback = 300

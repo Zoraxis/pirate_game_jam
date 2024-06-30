@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctartj18eqts6"]
+[gd_scene load_steps=4 format=3 uid="uid://ctartj18eqts6"]
 
 [ext_resource type="Script" path="res://objects/static/atoms/melee/melee_hit.gd" id="1_safo4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66lk3"]
 size = Vector2(0.44, 0.165)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4skjt"]
+
 [node name="MeleeHit" type="StaticBody2D" groups=["DAMAGE", "FRAGILE", "KNOCKBACK", "STUN"]]
 position = Vector2(0.51, 0.01)
+scale = Vector2(10, 10)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_safo4")
@@ -14,3 +17,9 @@ script = ExtResource("1_safo4")
 [node name="collider2" type="CollisionShape2D" parent="."]
 position = Vector2(-0.2, 2.79397e-09)
 shape = SubResource("RectangleShape2D_66lk3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.145, -0.01)
+scale = Vector2(0.555, 0.18)
+texture = SubResource("PlaceholderTexture2D_4skjt")
