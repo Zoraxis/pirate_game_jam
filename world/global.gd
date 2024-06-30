@@ -5,3 +5,5 @@ var console: Label = null
 
 func log(text):
 	console.log(text)
+
+var opened = false
