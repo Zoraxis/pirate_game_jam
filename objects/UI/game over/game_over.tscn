@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://cs4x5g1mvc62b"]
+
+[ext_resource type="Texture2D" uid="uid://bojibugrkskab" path="res://assets/ui/GUI (2).png" id="1_bi4lp"]
+[ext_resource type="Texture2D" uid="uid://cc24peidqunx1" path="res://assets/ui/Новый проект.png" id="2_g2743"]
+[ext_resource type="Script" path="res://objects/UI/game over/restart_button.gd" id="3_2r6sv"]
+[ext_resource type="FontFile" uid="uid://b7hwih841orpm" path="res://arcadeclassic/ARCADECLASSIC.TTF" id="4_3y8nj"]
+[ext_resource type="Script" path="res://objects/UI/canvas/exit_button.gd" id="5_16nof"]
+[ext_resource type="Texture2D" uid="uid://bi8ercnh3tx7w" path="res://assets/raw/game_over.png" id="6_uanc5"]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" type="Sprite2D" parent="CanvasLayer"]
+z_index = 20
+position = Vector2(575, 327.5)
+scale = Vector2(2.12349, 2.55667)
+texture = ExtResource("1_bi4lp")
+
+[node name="restart_button" type="Button" parent="CanvasLayer/PauseMenu"]
+offset_left = -58.8653
+offset_top = -44.7848
+offset_right = 249.135
+offset_bottom = 113.215
+scale = Vector2(0.385991, 0.207264)
+focus_mode = 0
+icon = ExtResource("2_g2743")
+flat = true
+script = ExtResource("3_2r6sv")
+
+[node name="Label" type="Label" parent="CanvasLayer/PauseMenu/restart_button"]
+layout_mode = 0
+offset_left = 59.377
+offset_top = 48.7139
+offset_right = 255.377
+offset_bottom = 99.7139
+theme_override_fonts/font = ExtResource("4_3y8nj")
+theme_override_font_sizes/font_size = 50
+text = "RESTART
+"
+
+[node name="exit_button" type="Button" parent="CanvasLayer/PauseMenu"]
+offset_left = -59.8072
+offset_top = -0.586702
+offset_right = 248.193
+offset_bottom = 157.413
+scale = Vector2(0.385991, 0.207264)
+focus_mode = 0
+icon = ExtResource("2_g2743")
+flat = true
+script = ExtResource("5_16nof")
+
+[node name="Label3" type="Label" parent="CanvasLayer/PauseMenu/exit_button"]
+layout_mode = 0
+offset_left = 104.052
+offset_top = 45.1462
+offset_right = 216.052
+offset_bottom = 96.1462
+theme_override_fonts/font = ExtResource("4_3y8nj")
+theme_override_font_sizes/font_size = 50
+text = "exit"
+
+[node name="GameOver" type="Sprite2D" parent="CanvasLayer"]
+z_index = 130
+position = Vector2(582, 111)
+scale = Vector2(5.555, 5.555)
+texture = ExtResource("6_uanc5")
+
+[connection signal="pressed" from="CanvasLayer/PauseMenu/restart_button" to="CanvasLayer/PauseMenu/restart_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/exit_button" to="CanvasLayer/PauseMenu/exit_button" method="_on_pressed"]

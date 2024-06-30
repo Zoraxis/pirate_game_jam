@@ -1411,7 +1411,6 @@ script = ExtResource("21_bat1t")
 noise = SubResource("FastNoiseLite_1ct0w")
 
 [node name="Canvas" parent="." instance=ExtResource("22_inwke")]
-visible = false
 
 [node name="main_ship" type="StaticBody2D" parent="."]
 
