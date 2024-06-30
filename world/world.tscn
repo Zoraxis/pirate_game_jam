@@ -14,10 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://dmiuu1iu3xcok" path="res://assets/image (1).png" id="12_r2qjm"]
 [ext_resource type="Texture2D" uid="uid://qnt14ru42dwg" path="res://assets/image (2).png" id="13_rlpyy"]
 [ext_resource type="Texture2D" uid="uid://cyfhe84ohow7i" path="res://assets/ui/GUI (1).png" id="14_h3uns"]
-[ext_resource type="Script" path="res://objects/UI/canvas/Button.gd" id="15_ailmp"]
+[ext_resource type="Script" path="res://objects/UI/canvas/pause_button.gd" id="15_ailmp"]
 [ext_resource type="Texture2D" uid="uid://bojibugrkskab" path="res://assets/ui/GUI (2).png" id="16_i2xml"]
 [ext_resource type="Texture2D" uid="uid://cc24peidqunx1" path="res://assets/ui/Новый проект.png" id="17_6pqim"]
-[ext_resource type="Script" path="res://objects/UI/canvas/Button1.gd" id="18_i61ki"]
+[ext_resource type="Script" path="res://objects/UI/canvas/continue_button.gd" id="18_i61ki"]
 [ext_resource type="FontFile" uid="uid://b7hwih841orpm" path="res://arcadeclassic/ARCADECLASSIC.TTF" id="19_8qjig"]
 [ext_resource type="Script" path="res://objects/UI/canvas/Button3.gd" id="20_tspk5"]
 

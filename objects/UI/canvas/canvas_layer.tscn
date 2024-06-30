@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dxxn1kgrhfv23"]
 
 [ext_resource type="Texture2D" uid="uid://cyfhe84ohow7i" path="res://assets/ui/GUI (1).png" id="1_vl0r3"]
-[ext_resource type="Script" path="res://objects/UI/canvas/Button.gd" id="2_4sbsa"]
+[ext_resource type="Script" path="res://objects/UI/canvas/pause_button.gd" id="2_4sbsa"]
 [ext_resource type="Texture2D" uid="uid://bojibugrkskab" path="res://assets/ui/GUI (2).png" id="3_tacjm"]
 [ext_resource type="Texture2D" uid="uid://cc24peidqunx1" path="res://assets/ui/Новый проект.png" id="4_rxnhe"]
-[ext_resource type="Script" path="res://objects/UI/canvas/Button1.gd" id="5_eru5b"]
+[ext_resource type="Script" path="res://objects/UI/canvas/continue_button.gd" id="5_eru5b"]
 [ext_resource type="FontFile" uid="uid://b7hwih841orpm" path="res://arcadeclassic/ARCADECLASSIC.TTF" id="6_o01x2"]
 [ext_resource type="Script" path="res://objects/UI/canvas/Button3.gd" id="7_ler6r"]
 
