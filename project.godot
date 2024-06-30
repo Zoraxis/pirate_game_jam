@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="pirate game jam"
-run/main_scene="res://Scenes/world.tscn"
+run/main_scene="res://world/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
 
-Global="*res://Scenes/world/global.gd"
+Global="*res://world/scripts/global.gd"
+U="*res://world/scripts/U.gd"
 
 [input]
 

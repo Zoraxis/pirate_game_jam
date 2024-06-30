@@ -5,7 +5,6 @@ var damage = 1
 
 func _ready():
 	name = "melee" + str(U.getTime())
-	Global.log(name)
 	die(0.2)
 
 func _physics_process(delta):
