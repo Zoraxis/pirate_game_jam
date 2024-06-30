@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://db51dls1vf2ot" path="res://assets/fresh-water-tiles-music/8bit-water-currenty.png" id="17_kwx60"]
 [ext_resource type="Texture2D" uid="uid://cmv32qdbgawbn" path="res://assets/fresh-water-tiles-music/8bit-water-flat.png" id="18_r7m48"]
 [ext_resource type="Texture2D" uid="uid://cphbikyx4041i" path="res://assets/fresh-water-tiles-music/8bit-water-ripply.png" id="19_h1ws4"]
-[ext_resource type="PackedScene" uid="uid://cgmforjd5kk8n" path="res://Scenes/player/player.tscn" id="20_j82ww"]
+[ext_resource type="PackedScene" uid="uid://cgmforjd5kk8n" path="res://player/player.tscn" id="20_j82ww"]
 [ext_resource type="Script" path="res://world/scripts/camera.gd" id="21_bat1t"]
 [ext_resource type="PackedScene" uid="uid://dxxn1kgrhfv23" path="res://objects/UI/canvas/canvas_layer.tscn" id="22_inwke"]
 
