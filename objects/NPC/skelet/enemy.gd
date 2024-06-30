@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var bullet = preload("res://objects/static/atoms/bullet/bullet.tscn")
 
-@export var SPEED = 200.0
+@export var SPEED = 20.0
 
 @export var level = 0
 @export var texture = 1
@@ -81,6 +81,7 @@ func handle_state_2():
 	velocity.x += -(position - Global.player.position).normalized().x * SPEED
 func handle_state_3():
 	state = 3
+	velocity.x = 0
 	if shooting_delay <= 0:
 		shooting_delay = shooting_delay_max
 		changeAnimation("attack", true)

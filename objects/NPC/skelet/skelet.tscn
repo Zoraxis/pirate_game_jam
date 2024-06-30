@@ -18,7 +18,7 @@ size = Vector2(34.75, 7.33333)
 
 [node name="enemy" type="CharacterBody2D"]
 rotation = 3.14159
-scale = Vector2(6, -6)
+scale = Vector2(0.8, -0.8)
 collision_layer = 536870912
 collision_mask = 536870913
 script = ExtResource("1_qq4jb")
@@ -66,7 +66,7 @@ scale = Vector2(0.22, 0.22)
 
 [node name="pistolParticle" type="CPUParticles2D" parent="."]
 top_level = true
-position = Vector2(30, 3)
+position = Vector2(-4.78, 0.365)
 emitting = false
 amount = 30
 lifetime = 2.0
@@ -80,8 +80,8 @@ direction = Vector2(0, 0)
 spread = 10.0
 gravity = Vector2(0, 0)
 initial_velocity_max = 49.49
-scale_amount_min = 5.0
-scale_amount_max = 12.5
+scale_amount_min = 2.0
+scale_amount_max = 7.0
 color_initial_ramp = ExtResource("3_ajs83")
 
 [node name="HitBox2" type="Area2D" parent="."]

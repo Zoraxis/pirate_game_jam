@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dq57m2kanthae"]
+
+[ext_resource type="Texture2D" uid="uid://dmiuu1iu3xcok" path="res://assets/image (1).png" id="1_lyepm"]
+[ext_resource type="Script" path="res://objects/static/atoms/boat/boat.gd" id="1_vl55q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cu3is"]
+size = Vector2(32, 4.9055)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qinge"]
+size = Vector2(32, 9.5)
+
+[node name="boat" type="AnimatableBody2D"]
+sync_to_physics = false
+script = ExtResource("1_vl55q")
+
+[node name="boat" type="Sprite2D" parent="."]
+scale = Vector2(0.0537926, 0.0595238)
+texture = ExtResource("1_lyepm")
+
+[node name="collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.452751)
+scale = Vector2(1, 1.08)
+shape = SubResource("RectangleShape2D_cu3is")
+
+[node name="player_detection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1073741824
+
+[node name="collider" type="CollisionShape2D" parent="player_detection"]
+position = Vector2(0, -6.75)
+shape = SubResource("RectangleShape2D_qinge")
+
+[connection signal="body_entered" from="player_detection" to="." method="_on_body_entered"]

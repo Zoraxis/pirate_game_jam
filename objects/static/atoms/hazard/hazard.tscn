@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcqjywejkpnxv"]
+
+[ext_resource type="Script" path="res://objects/static/atoms/hazard/hazard.gd" id="1_8um0r"]
+[ext_resource type="Script" path="res://objects/static/atoms/hazard/hazard_damage.gd" id="2_6v5ie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6tfn"]
+size = Vector2(641, 6)
+
+[node name="hazard" type="Area2D"]
+collision_layer = 0
+collision_mask = 1073741824
+script = ExtResource("1_8um0r")
+
+[node name="static" type="StaticBody2D" parent="." groups=["DAMAGE"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_6v5ie")
+
+[node name="collider" type="CollisionShape2D" parent="static"]
+position = Vector2(311, 0)
+shape = SubResource("RectangleShape2D_h6tfn")
+
+[node name="collider" type="CollisionShape2D" parent="."]
+position = Vector2(311, 0)
+shape = SubResource("RectangleShape2D_h6tfn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

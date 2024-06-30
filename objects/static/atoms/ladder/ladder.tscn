@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3pnswius32gp"]
+
+[ext_resource type="Script" path="res://objects/static/atoms/ladder/ladder.gd" id="1_d8jmb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21tdd"]
+size = Vector2(20, 55)
+
+[node name="ladder" type="Area2D"]
+scale = Vector2(0.35, 0.75)
+collision_layer = 0
+collision_mask = 1073741824
+script = ExtResource("1_d8jmb")
+
+[node name="collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_21tdd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
