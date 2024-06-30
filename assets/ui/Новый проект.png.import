@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlr8weeovchnw"
-path="res://.godot/imported/GUI (3).png-de7dcfc7af0b5f7777aa5ac699b6d9e3.ctex"
+uid="uid://cc24peidqunx1"
+path="res://.godot/imported/Новый проект.png-cf2b2adf12fa0cf334c3e1a666841ed4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GUI (3).png"
-dest_files=["res://.godot/imported/GUI (3).png-de7dcfc7af0b5f7777aa5ac699b6d9e3.ctex"]
+source_file="res://assets/ui/Новый проект.png"
+dest_files=["res://.godot/imported/Новый проект.png-cf2b2adf12fa0cf334c3e1a666841ed4.ctex"]
 
 [params]
 

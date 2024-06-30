@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://ci2dvxvoww0yp"]
 
 [ext_resource type="PackedScene" uid="uid://cgmforjd5kk8n" path="res://player/player.tscn" id="1_mmuvr"]
-[ext_resource type="Script" path="res://world/camera.gd" id="2_46e0k"]
+[ext_resource type="Script" path="res://Scenes/world/camera.gd" id="2_46e0k"]
 [ext_resource type="Texture2D" uid="uid://ddt51arjpqiii" path="res://shared/textures/plain/orange.tres" id="2_r45jp"]
-[ext_resource type="Script" path="res://world/console.gd" id="3_2nxyb"]
+[ext_resource type="Script" path="res://Scenes/world/console.gd" id="3_2nxyb"]
 [ext_resource type="PackedScene" uid="uid://buv6ydu0m6frc" path="res://objects/NPC/skelet/skelet.tscn" id="4_inf35"]
 [ext_resource type="PackedScene" uid="uid://dhp3tiscyd702" path="res://objects/static/atoms/bullet/bullet.tscn" id="5_8revs"]
 
