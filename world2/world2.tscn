@@ -1,6 +1,7 @@
-[gd_scene load_steps=150 format=3 uid="uid://cwn7x4cnk24hd"]
+[gd_scene load_steps=151 format=3 uid="uid://cwn7x4cnk24hd"]
 
 [ext_resource type="PackedScene" uid="uid://b3pnswius32gp" path="res://objects/static/atoms/ladder/ladder.tscn" id="2_rvwjt"]
+[ext_resource type="PackedScene" uid="uid://buv6ydu0m6frc" path="res://objects/NPC/skelet/skelet.tscn" id="8_etawg"]
 [ext_resource type="Texture2D" uid="uid://hsg4anaal0a6" path="res://assets/fresh-water-tiles-music/8bit-water-texture-sq.png" id="9_0da8b"]
 [ext_resource type="Texture2D" uid="uid://cl04nth13fkgj" path="res://assets/GhostShip_Decoration.png" id="10_8nu7m"]
 [ext_resource type="Texture2D" uid="uid://brju2tt4awu3c" path="res://assets/Pixelart Grasslands/GrassTiles.png" id="11_e6sft"]
@@ -1464,3 +1465,24 @@ shape = SubResource("RectangleShape2D_kletw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_ship"]
 position = Vector2(-196, 72.5)
 shape = SubResource("RectangleShape2D_4xemq")
+
+[node name="enemy" parent="enemy_ship" instance=ExtResource("8_etawg")]
+position = Vector2(-53, 64)
+rotation = 0.0
+scale = Vector2(0.85, 0.8)
+texture = 3
+
+[node name="enemy2" parent="enemy_ship" instance=ExtResource("8_etawg")]
+position = Vector2(-211, 40)
+rotation = 0.0
+scale = Vector2(0.85, 0.8)
+texture = 3
+
+[node name="enemy4" parent="enemy_ship" instance=ExtResource("8_etawg")]
+position = Vector2(-208, 68)
+rotation = 0.0
+scale = Vector2(0.85, 0.8)
+texture = 3
+
+[node name="enemy3" parent="enemy_ship" instance=ExtResource("8_etawg")]
+position = Vector2(-80, 112)
